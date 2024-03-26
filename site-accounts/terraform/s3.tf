@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "long_term_data_store" {
-  bucket = "Archive"
+  bucket = "archive"
 }
 
 resource "aws_s3_bucket_acl" "acl" {
