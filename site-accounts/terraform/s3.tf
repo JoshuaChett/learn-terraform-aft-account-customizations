@@ -2,14 +2,12 @@ resource "aws_s3_bucket" "long_term_data_store" {
   bucket = "learn-aft-sdi-archive"
 }
 
-resource "aws_s3_bucket_acl" "acl" {
-  bucket = aws_s3_bucket.long_term_data_store.id
-  acl    = "private"
+resource "aws_s3_object" "crowdstrike_folder" {
+  bucket = "learn-aft-sdi-archive"
+  key    = "crowdstrike-archive/"
 }
 
-
-
-
-
-#An IAM user with full access to S3 - Unless this should be configured through the root identity center
-#I think it may actually make sense to have a bucket per data source, 
+resource "aws_s3_object" "corelight_folder" {
+  bucket = "learn-aft-sdi-archive"
+  key    = "corelight-archive/"
+}
